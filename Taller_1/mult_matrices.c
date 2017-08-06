@@ -55,6 +55,19 @@ int** init(int** X,int rows,int cols){
 
 }
 
+void Write(FILE *Result_file, int** Result, int rows, int cols){
+
+	int i,j;
+
+	for ( i=0; i<rows; i++){
+			for( j=0;j<cols;j++){
+				fprintf(Result_file, "%d",Result[i][j]);
+				fprintf(Result_file, "%s",",");
+			}
+		fprintf(Result_file, "%s","\n"); 	
+	}
+}
+
 int main(){
 
 	int filA,colA,filB,colB;
@@ -62,8 +75,12 @@ int main(){
 	FILE *matrizA;
 	FILE *matrizB;
 
+	FILE *Result_file;
+
 	matrizA = fopen("matrizA.txt","r");
 	matrizB = fopen("matrizB.txt","r");
+	Result_file = fopen("matriz_resultado.txt","w");
+
 
 	fscanf (matrizA,"%d",&filA);
 	fscanf (matrizA,"%d",&colA);
@@ -95,7 +112,8 @@ int main(){
 	multiplicaMatrices(A,filA,colA,B,filB,colB,Result);
 	printf(" Multiplicación: \n");
 	imprimeMatrices(Result,filA,colB);
-	
+
+	Write(Result_file,Result,filA,colB);	
 
 	free(*A);free(*B);free(*Result);//liberamos memoria
 	free(A);free(B);free(Result);
