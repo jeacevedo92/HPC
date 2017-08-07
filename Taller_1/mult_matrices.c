@@ -7,30 +7,30 @@
 #include<stdio.h>
 
 
-void llenaMatrices(FILE *archivo,int** matriz,int rows, int col){
+void llenaMatrices(FILE *archivo,float** matriz,int rows, int col){
 
 	int i,j;
 
 	for( i=0 ; i<rows ; i++){
 		for(j=0;j<col;j++){
 			fgetc(archivo);
-			fscanf (archivo,"%d",&matriz[i][j]);
+			fscanf (archivo,"%f",&matriz[i][j]);
 		}
 	}
 }
 
-void imprimeMatrices(int** X,int filas,int columnas){
+void imprimeMatrices(float** X,int filas,int columnas){
 	int i,j;
 
 	for ( i = 0; i < filas; i++){
 			for( j=0;j<columnas;j++){
-				printf("%d  ", X[i][j]);
+				printf("%.2f  ", X[i][j]);
 			}
 			printf("\n");
 	}
 }
 
-void multiplicaMatrices(int** X,int filX,int colX,int** Y,int filY,int colY,int** Z)
+void multiplicaMatrices(float** X,int filX,int colX,float** Y,int filY,int colY,float** Z)
 {
 	int i,j,k;
 	int suma=0;
@@ -46,26 +46,26 @@ void multiplicaMatrices(int** X,int filX,int colX,int** Y,int filY,int colY,int*
 	}
 }
 
-int** init(int** X,int rows,int cols){
+float** init(float** X,int rows,int cols){
 
 	int i;
 
-	X=(int**)malloc(rows*sizeof(int*));//reservamos memoria
+	X=(float**)malloc(rows*sizeof(float*));//reservamos memoria
 
 	for(i=0;i<rows;i++){
-		X[i]=(int*)malloc(cols*sizeof(int*));
+		X[i]=(float*)malloc(cols*sizeof(float*));
 	}
 	return X;
 
 }
 
-void Write(FILE *Result_file, int** Result, int rows, int cols){
+void Write(FILE *Result_file, float** Result, int rows, int cols){
 
 	int i,j;
 
 	for ( i=0; i<rows; i++){
 			for( j=0;j<cols;j++){
-				fprintf(Result_file, "%d",Result[i][j]);
+				fprintf(Result_file, "%f",Result[i][j]);
 				fprintf(Result_file, "%s",",");
 			}
 		fprintf(Result_file, "%s","\n"); 	
@@ -108,7 +108,8 @@ int main(int argc, char** argv){
 		return 1;
 	}
 
-	int** A;int** B;int** Result;
+
+	float** A;float** B;float** Result;
 
 	//inicializan las matrices a utilizar 
 	A = init(A,filA,colA);
