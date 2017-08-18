@@ -1,0 +1,14 @@
+conectar cluster 
+
+ssh jeacevedo@lovelace.utp.edu.co -p4000
+
+modificar variables de entorno 
+
+export OMP_NUM_THREADS=16
+
+numero de hilos por nucleo
+
+cat /proc/cpuinfo
+
+
+scp -p4000 hello.c /mpiu@lovalace.utp.edu.co
