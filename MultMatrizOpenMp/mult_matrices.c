@@ -131,12 +131,12 @@ int main(int argc, char** argv){
 
 	//se lee el archivo de texto y se guarda en la matriz los valores obtenidos.
 	llenaMatrices(matrizA,A,filA,colA);
-	printf(" Matriz A: \n");
-	imprimeMatrices(A,filA,colA);	
+	//printf(" Matriz A: \n");
+	//imprimeMatrices(A,filA,colA);	
 
 	llenaMatrices(matrizB,B,filB,colB);
-	printf(" Matriz B: \n");
-	imprimeMatrices(B,filB,colB);
+	//printf(" Matriz B: \n");
+	//imprimeMatrices(B,filB,colB);
 
 
 	//Se realiza la multiplicacion de las dos matrices
@@ -147,8 +147,8 @@ int main(int argc, char** argv){
 
 
 
-	printf(" Multiplicación: \n");
-	imprimeMatrices(Result,filA,colB);
+	//printf(" Multiplicación: \n");
+	//imprimeMatrices(Result,filA,colB);
 
 	//se escribe en u archivo de texto la matriz resultante
 	Write(Result_file,Result,filA,colB);	

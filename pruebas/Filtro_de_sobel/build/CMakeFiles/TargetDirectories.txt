@@ -1,0 +1,3 @@
+/homeshare/carolina/HighPerformanceComputing/Filtro_de_sobel/build/CMakeFiles/edit_cache.dir
+/homeshare/carolina/HighPerformanceComputing/Filtro_de_sobel/build/CMakeFiles/rebuild_cache.dir
+/homeshare/carolina/HighPerformanceComputing/Filtro_de_sobel/build/CMakeFiles/sobel.dir

@@ -119,12 +119,12 @@ int main(int argc, char** argv){
 
 	//se lee el archivo de texto y se guarda en la matriz los valores obtenidos.
 	llenaMatrices(matrizA,A,filA,colA);
-	printf(" Matriz A: \n");
-	imprimeMatrices(A,filA,colA);	
+	//printf(" Matriz A: \n");
+	//imprimeMatrices(A,filA,colA);	
 
 	llenaMatrices(matrizB,B,filB,colB);
-	printf(" Matriz B: \n");
-	imprimeMatrices(B,filB,colB);
+	//printf(" Matriz B: \n");
+	//imprimeMatrices(B,filB,colB);
 
 
 	//Se realiza la multiplicacion de las dos matrices
@@ -134,7 +134,7 @@ int main(int argc, char** argv){
 
 
 	printf(" Multiplicación: \n");
-	imprimeMatrices(Result,filA,colB);
+	//imprimeMatrices(Result,filA,colB);
 
 	double time_CPU = ((double)(endCPU - startCPU)) / CLOCKS_PER_SEC;
 	printf("El tiempo de ejecucion fue: %f\n",time_CPU);

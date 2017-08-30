@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.8)
+project(sobel)
+set(CUDA_USE_STATIC_CUDA_RUNTIME OFF)
+find_package(OpenCV REQUIRED)
+find_package(CUDA REQUIRED)
+cuda_add_executable(sobel sobel.cu)
+target_link_libraries(sobel ${OpenCV_LIBS})
