@@ -1,6 +1,6 @@
 conectar cluster 
 
-ssh -l jeacevedo lovelace.utp.edu.co -p4000
+ssh -l jeacevedo92 lovelace.utp.edu.co -p4000
 
 
 modificar variables de entorno 
@@ -14,5 +14,30 @@ cat /proc/cpuinfo
 
 scp -p4000 hello.c /mpiu@lovalace.utp.edu.co
 
+
+compile and execute slurm
+
+
+para nvcc
+
+export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64/${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+
+
+sbatch vecadd.sh
+
+
+cat res_vecadd
+
+
+
+tareas 
+
+* suma de vectores cuda - correr en clouter con SLURM
+* multiplicacion de matrices y correrla con slurm en el clouter
+* cargar una imagen 
+* convertirla a matriz y multiplicarla por 2 
+* escala de grises para la imagen
 
 
