@@ -36,7 +36,7 @@ tareas
 
 * suma de vectores cuda - correr en clouter con SLURM
 * multiplicacion de matrices y correrla con slurm en el clouter
-* cargar una imagen 
+* cargar una imagen
 * convertirla a matriz y multiplicarla por 2 
 * escala de grises para la imagen
 
