@@ -2,6 +2,9 @@ conectar cluster
 
 ssh -l jeacevedo92 lovelace.utp.edu.co -p4000
 
+interfaz grafica
+ssh -X jeacevedo92@192.168.1.221 -p4000
+
 
 modificar variables de entorno 
 
@@ -58,4 +61,8 @@ add_executable( DisplayImage DisplayImage.cpp )
 target_link_libraries( DisplayImage ${OpenCV_LIBS} )
 
 ------------------------------------------------------------------------------------
+
+
+interfaz grafica en clouster
+gedit imagegrayscale.cu &>/dev/null &
 
