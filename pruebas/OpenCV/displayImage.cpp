@@ -16,6 +16,8 @@ int main(int argc, char **argv) {
   int rows = image.rows;
   int cols = image.cols;
   cout << "rows: " << rows << " cols: " << cols << endl;
+
+
   for (int i = 0; i < rows; i++) {
     cout << "[ ";
     for (int j = 0; j < cols; j++) {
@@ -24,6 +26,7 @@ int main(int argc, char **argv) {
     cout << " ]";
     cout << endl;
   }
+
 
   if (!image.data) // Check for invalid input
   {
