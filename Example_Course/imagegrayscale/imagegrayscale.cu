@@ -46,6 +46,7 @@ int main(int argc, char **argv){
     dataRawImage = (unsigned char*)malloc(size);
     error = cudaMalloc((void**)&d_dataRawImage,size);
     if(error != cudaSuccess){
+	printf("GPUassert: %s\n", cudaGetErrorString(error));
         printf("Error reservando memoria para d_dataRawImage\n");
         exit(-1);
     }
