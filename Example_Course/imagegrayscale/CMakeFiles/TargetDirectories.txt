@@ -1,3 +1,0 @@
-/home/users/jeacevedo92/respos/HPC/Example_Course/imagegrayscale/CMakeFiles/edit_cache.dir
-/home/users/jeacevedo92/respos/HPC/Example_Course/imagegrayscale/CMakeFiles/rebuild_cache.dir
-/home/users/jeacevedo92/respos/HPC/Example_Course/imagegrayscale/CMakeFiles/imagegrayscale.dir

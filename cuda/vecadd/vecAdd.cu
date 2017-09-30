@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <iostream>
+
+using namespace std;
  
 // CUDA kernel. Each thread takes care of one element of c
 __global__ void vecAdd(double *a, double *b, double *c, int n)
@@ -17,6 +20,8 @@ __global__ void vecAdd(double *a, double *b, double *c, int n)
  
 int main( int argc, char* argv[] )
 {
+    cout<<"ESTA ES UNA PRUEBA"<<endl;
+
     // Size of vectors
     int n = 100000;
  
