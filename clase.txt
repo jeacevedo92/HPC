@@ -4,6 +4,7 @@ ssh -l jeacevedo92 lovelace.utp.edu.co -p4000
 
 interfaz grafica
 ssh -X jeacevedo92@192.168.1.221 -p4000
+ssh -X jeacevedo92@lovelace.utp.edu.co -p4000
 
 
 modificar variables de entorno 
