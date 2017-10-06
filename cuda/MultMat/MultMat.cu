@@ -92,8 +92,8 @@ int main(int argc, char const *argv[])
 	start = clock();
 	matrixMulHost(h_MA, h_MB, h_MR, width);
 	end = clock();
-	cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-	printf("Tiempo algoritmo secuencial: %.10f\n", cpu_time_used);
+	cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+	printf("Tiempo algoritmo secuencial: %.10f\n", cpu_time);
 
 	//reservando memoria para el Device//////////////////////////////////////////
 
@@ -139,7 +139,7 @@ int main(int argc, char const *argv[])
 	cudaDeviceSynchronize();
 	cudaMemcpy(h_MRD, d_MR, size, cudaMemcpyDeviceToHost);
 	endGPU = clock();
-	gpu_time_used = ((double) (endGPU - startGPU)) / CLOCKS_PER_SEC;
+	gpu_time = ((double) (endGPU - startGPU)) / CLOCKS_PER_SEC;
 	printf("Tiempo algoritmo paralelo: %.10f\n", gpu_time_used);
 	printf("La aceleración obtenida es de %.10fX\n",cpu_time_used/gpu_time_used);
 	///////////////////////Algoritmo Paralelo////////////////////////////
