@@ -53,13 +53,6 @@ int printData(int *data, int width){
 }
 
 
-int initValues(int *data, int width){
-    for(int i = 0; i < width*width; i++)
-        data[i] = rand()%10;
-    return 0;
-}
-
-
 int main(int argc, char const *argv[])
 {
 
@@ -140,8 +133,8 @@ int main(int argc, char const *argv[])
 	cudaMemcpy(h_MRD, d_MR, size, cudaMemcpyDeviceToHost);
 	endGPU = clock();
 	gpu_time = ((double) (endGPU - startGPU)) / CLOCKS_PER_SEC;
-	printf("Tiempo algoritmo paralelo: %.10f\n", gpu_time_used);
-	printf("La aceleración obtenida es de %.10fX\n",cpu_time_used/gpu_time_used);
+	printf("Tiempo algoritmo paralelo: %.10f\n", gpu_time);
+	printf("La aceleración obtenida es de %.10fX\n",cpu_time/gpu_time);
 	///////////////////////Algoritmo Paralelo////////////////////////////
 
 	free(h_MA);
