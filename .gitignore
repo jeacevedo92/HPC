@@ -35,3 +35,9 @@
 # Songs
 *.mp3
 *.ogg
+
+#folders
+images/
+build/
+Images_L7/
+

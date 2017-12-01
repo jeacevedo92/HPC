@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project(thermal_image_GPU)
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+add_executable(thermal_image_GPU.out thermal_image_GPU.cu )
+target_link_libraries(thermal_image_GPU.out ${OpenCV_LIBS})
