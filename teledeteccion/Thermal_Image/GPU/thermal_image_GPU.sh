@@ -6,13 +6,14 @@
 #SBATCH --nodes=1
 #SBATCH  --gres=gpu:1
 
-imageFolder="../../Images_L7/"
-imageName_band1=$imageFolder"LE07_L1GT_010054_20170421_20170517_01_T2_B6_VCID_1.TIF"
-#imageName_band1=$imageFolder"LE07_L1GT_010054_20170421_20170517_01_T2_B6_VCID_2.TIF"
+imageFolder="./build/"
+#imageName_band1=$imageFolder"LE07_L1GT_010054_20170421_20170517_01_T2_B6_VCID_1.TIF"
+imageName_band1=$imageFolder"LE07_L1GT_010054_20170421_20170517_01_T2_B6_VCID_2.TIF"
 
 export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64/${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
+export CUDA_VISIBLE_DEVICES=0
 
 i=0
 

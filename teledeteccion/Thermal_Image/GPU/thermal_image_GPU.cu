@@ -32,7 +32,8 @@ using namespace cv;
 // K1_CONSTANT_BAND_6_VCID_2 = 666.09
 // K2_CONSTANT_BAND_6_VCID_2 = 1282.71
 
-__global__ double Radiancia ( double pixel){
+__device__
+double Radiancia ( double pixel){
     double rad = pixel * ganancia + offset ;
 
     if ( rad < 0)
@@ -40,12 +41,14 @@ __global__ double Radiancia ( double pixel){
     return ( rad );
 }
 
-__global__ double Temperature( double term){
+__device__
+double Temperature( double term){
     return ( K2 / ( log (( K1 / Radiancia(term))+1)));
 }
 
 
-__global__ void Thermic(unsigned char *imagen1,int filas, int columnas, unsigned char *resultado){
+__global__
+void Thermic(unsigned char *imagen1,int filas, int columnas, unsigned char *resultado){
 
     int row = blockIdx.y*blockDim.y+threadIdx.y;
     int col = blockIdx.x*blockDim.x+threadIdx.x;
@@ -134,9 +137,9 @@ int main(int argc, char **argv){
 
     char* imageName1 = argv[1];    
 
-	Mat image1;
+    Mat image1;
 
-  	image1 = imread(imageName1, CV_LOAD_IMAGE_COLOR);  
+    image1 = imread(imageName1, CV_LOAD_IMAGE_COLOR);  
     
     //se obtienen los atributos de las imagenes
 
