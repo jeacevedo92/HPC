@@ -33,7 +33,6 @@ __global__ void naturalColor(unsigned char *imagen1,unsigned char *imagen2,unsig
 }
 
 
-
 int main(int argc, char **argv){
 
     if(argc !=4){
@@ -66,7 +65,8 @@ int main(int argc, char **argv){
 
 	Mat image1, image2, image3;
 
-  	image1 = imread(imageName1, CV_LOAD_IMAGE_COLOR);
+
+    image1 = imread(imageName1, CV_LOAD_IMAGE_COLOR);
     image2 = imread(imageName2, CV_LOAD_IMAGE_COLOR);
     image3 = imread(imageName3, CV_LOAD_IMAGE_COLOR);    
     
